@@ -7,15 +7,15 @@ import java.util.Collection;
 
 // autor-livro = N-N unidirecional -> @ManyToMany
 
-@RequiredArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @Entity
 public class Autor {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long codigoAutor;
     private String primeiroNome;
     private String ultimoNome;

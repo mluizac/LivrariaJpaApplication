@@ -1,19 +1,14 @@
 package com.LivrariaJpaApplication.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import lombok.*;
+
+import javax.persistence.*;
 import java.util.Collection;
 
 // editora-livro = 1-N bidirecional <->  @OneToMany
 
-@RequiredArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -23,7 +18,7 @@ public class Editora {
     private Collection<Livro> livros;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long codigoEditora;
     private String nome;
 
